@@ -45,7 +45,7 @@ def makeplanet(loc, si):
     pierre=bpy.context.object 
     ma = my_custom_random()
     mat =  bpy.data.materials[ma]
-    bpy.context.object.data.materials.append(mat)
+    bpy.context.object.data.materials.append(ma
     bpy.ops.object.shade_smooth()
     
     #add 2 Arrays

@@ -180,9 +180,9 @@ bpy.data.scenes['Scene'].frame_current = 1
 
 #Adding something to reduce noise
 bpy.context.view_layer.cycles.use_denoising = True
-bpy.context.view_layer.cycles.denoising_store_passes = True
-bpy.context.view_layer.cycles.use_adaptive_sampling = True
-#not working
+#the rest does not work
+#bpy.context.view_layer.cycles.denoising_store_passes = True
+#bpy.context.view_layer.cycles.use_adaptive_sampling = True
 #bpy.context.view_layer.cycles.samples = 700
 
 
