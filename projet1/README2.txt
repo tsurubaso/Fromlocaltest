@@ -1,4 +1,4 @@
-The Materials in the Blend file comme from here:
+The Materials in the Blend file comes from here:
 
 https://www.blendswap.com/blend/5733
 
@@ -6,7 +6,7 @@ From: thefull9yards
 
 This folder [Project1] contains a Blender file and 2 .py files to use with the Blend.
 
-The Perpous of the script:
+The goal of the script:
 
 - Create a star system, a fake planetarium.
 
