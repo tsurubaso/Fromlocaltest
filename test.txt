@@ -1,1 +1,44 @@
 ﻿Notes personnelles.
+
+PS C:\gitproject> git log
+commit a355cd6595effdd1df36b2b74dea1112679d60cd (HEAD -> master, origin/master)
+Author: tsurubaso <tsurubaso@hotmail.com>
+Date:   Thu Sep 17 00:04:47 2020 +0900
+
+    Denoising but not all commends goes in Python
+
+commit 7f3c71d2f8c81b3a52167b91f512e85118a44e6e
+Author: tsurubaso <tsurubaso@hotmail.com>
+Date:   Wed Sep 16 17:30:17 2020 +0900
+
+    #Adding something to reduce noise
+
+commit 5433b95216a80ebd9957b28558e55c2188f8a846
+Author: tsurubaso <tsurubaso@hotmail.com>
+Date:   Wed Sep 16 15:57:54 2020 +0900
+
+    Update README2.txt
+
+commit 86dd60570736f89e05e3f66726a29e8d009662c7
+Author: tsurubaso <tsurubaso@hotmail.com>
+Date:   Wed Sep 16 15:54:25 2020 +0900
+
+    Adding a Readme
+
+commit 27fdcf20bd1014f9881c61560fdabb4607d63dc5
+Author: tsurubaso <tsurubaso@hotmail.com>
+Date:   Mon Sep 14 22:02:21 2020 +0900
+
+    Create README.md
+
+commit e03189b57023a8a1ca773c7d6ddce6a11fac86e2
+Author: tsurubaso <tsurubaso@hotmail.com>
+Date:   Sun Sep 13 16:03:21 2020 +0900
+
+    Projet Blender Planetarium with array
+
+commit f49b105b5188666a86b6eaabdd1d607d6a2dfb18
+Author: tsurubaso <tsurubaso@hotmail.com>
+Date:   Sun Sep 13 13:15:06 2020 +0900
+
+
