@@ -1,4 +1,3 @@
-# Fromlocaltest
 
 Copyright (c) 2020 Sylvain Bilhaud, Tokyo
 
@@ -14,11 +13,20 @@ Copyright (c) 2020 Sylvain Bilhaud, Tokyo
    See the License for the specific language governing permissions and
    limitations under the License.
 
-In here different projects:
 
-Project1: Fake Planetarium
 
-Project2: Studio setting, light and Camera
+The Materials in the Blend file comes from here:
 
-Project3: site tool to dig data (you can not use this to any sites)
+https://www.blendswap.com/blend/5733
+
+From: thefull9yards
+
+This folder [Project2] contains a Blender file and 2 .py files to use with the Blend.
+
+The goal of the script:
+
+- Create a Camera rig, really simple stuff created automaticly.
+
+
+The main Idea is to create with a simple script in one click, a "procedural" movie rig.
 

@@ -1,4 +1,3 @@
-# Fromlocaltest
 
 Copyright (c) 2020 Sylvain Bilhaud, Tokyo
 
@@ -14,11 +13,10 @@ Copyright (c) 2020 Sylvain Bilhaud, Tokyo
    See the License for the specific language governing permissions and
    limitations under the License.
 
-In here different projects:
 
-Project1: Fake Planetarium
+This folder [Project3] contains a Blender file and 2 .py files to use with the Blend.
 
-Project2: Studio setting, light and Camera
+The goal of the script:
 
-Project3: site tool to dig data (you can not use this to any sites)
+- Create a Data collecting tool, with a graphic interface.
 
