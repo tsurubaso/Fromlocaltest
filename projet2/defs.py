@@ -24,77 +24,11 @@ def makeparent (Objet1, Objet2):
     Objet2.select_set(True)
     bpy.context.view_layer.objects.active = Objet1
     bpy.ops.object.parent_set(type='OBJECT') #follow paths
-    
-    
-
-def makeplanet(loc, si):
-    #create an Empty
-    makeEmpty(loc)
-    piotr=bpy.context.object
-    piotrgr.append(bpy.context.object)
-
-    
-    #create an Empty
-    makeEmpty(loc)
-    Douchka=bpy.context.object 
-    Douchkagr.append(bpy.context.object)
-    
-    #creation of Sphere
-    bpy.ops.object.select_all(action='DESELECT') 
-    bpy.ops.mesh.primitive_uv_sphere_add(radius=si, enter_editmode=False, align='WORLD',location=loc)
-    pierre=bpy.context.object 
-    ma = my_custom_random()
-    mat =  bpy.data.materials[ma]
-    bpy.context.object.data.materials.append(mat)
-    bpy.ops.object.shade_smooth()
-    
-    #add 2 Arrays
-    bpy.ops.object.modifier_add(type='ARRAY')
-    bpy.context.object.modifiers["Array"].count = 5
-    bpy.context.object.modifiers["Array"].use_object_offset = True
-    bpy.context.object.modifiers["Array"].offset_object = piotr
-    bpy.ops.object.modifier_add(type='ARRAY')
-    bpy.context.object.modifiers["Array.001"].count = 5
-    bpy.context.object.modifiers["Array.001"].use_object_offset = True
-    bpy.context.object.modifiers["Array.001"].offset_object = Douchka
-
-    makeparent (pierre, piotr)
-    makeparent (pierre, Douchka)
-   
-    
-    return Douchkagr,piotrgr
-    
-   
-
-    
      
    
 def makeEmpty(loc3):
     #creation of Empty
     empt=bpy.ops.object.empty_add(type='SPHERE', align='WORLD', location=loc3)
-    
-
-
-#nombre de repetition de la boucle
-def bouclePlanet(loc2):
-    (x,y,z)=loc2
-    i=0
-    g=0.1
-    r = random.randint(1,10)
-    while i < r:
-        t=random.uniform(-1.0,2.)
-        t2=random.uniform(-1.0,2.)
-        t3=random.uniform(-1.0,2.)
-        u=random.uniform(-.02,0.2)
-        Douchkagr,piotrgr=makeplanet((x,y,z), (g))
-        meshgr.append(bpy.context.object)
-        x=t3+x
-        y=t+y
-        z=t2+z
-        g=g+u
-        i=i+1
-    return x,y,z,g,meshgr,Douchkagr,piotrgr
-
 
 def targetobj(obj1,obj2):
     targetobj = obj1

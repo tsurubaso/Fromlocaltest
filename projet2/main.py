@@ -39,16 +39,9 @@ lampgr.append(bpy.context.object)
 defs.makeEmpty((x,y,z))
 emptygr.append(bpy.context.object)
 
-        
-        
 
 
 
-#les Lamps sur des spheres aux hasard
-for up in lampgr:
-    qsph = random.randint(0,len(meshgr)-1)
-    
-    defs.targetobj(meshgr[qsph],up)
 
 
 #Premier traveling La camera d'origine
@@ -92,7 +85,6 @@ bpy.context.view_layer.cycles.use_denoising = True
 #bpy.context.view_layer.cycles.denoising_store_passes = True
 #bpy.context.view_layer.cycles.use_adaptive_sampling = True
 #bpy.context.view_layer.cycles.samples = 700
-
 
 
 

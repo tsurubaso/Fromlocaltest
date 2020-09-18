@@ -14,13 +14,6 @@ Copyright (c) 2020 Sylvain Bilhaud, Tokyo
    limitations under the License.
 
 
-
-The Materials in the Blend file comes from here:
-
-https://www.blendswap.com/blend/5733
-
-From: thefull9yards
-
 This folder [Project2] contains a Blender file and 2 .py files to use with the Blend.
 
 The goal of the script:
