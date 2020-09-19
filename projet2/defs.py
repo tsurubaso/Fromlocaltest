@@ -1,10 +1,6 @@
 import bpy
 import random
 
-meshgr=[]
-cameragr=[]
-emptygr=[]
-
 
 #l'ensemble des def 
 def addLamp(loc):
@@ -12,20 +8,6 @@ def addLamp(loc):
     bpy.context.object.data.type = 'SUN'
     bpy.context.object.data.energy = 3
     
-    
-def my_custom_random():
-  exclude=[1]
-  randInt = random.randint(0,6)
-  return my_custom_random() if randInt in exclude else randInt 
-
-def makeparent (Objet1, Objet2):
-    bpy.ops.object.select_all(action='DESELECT')
-    Objet1.select_set(True)
-    Objet2.select_set(True)
-    bpy.context.view_layer.objects.active = Objet1
-    bpy.ops.object.parent_set(type='OBJECT') #follow paths
-     
-   
 def makeEmpty(loc3):
     #creation of Empty
     empt=bpy.ops.object.empty_add(type='SPHERE', align='WORLD', location=loc3)
@@ -38,13 +20,11 @@ def targetobj(obj1,obj2):
     ttc.track_axis = 'TRACK_NEGATIVE_Z'
     ttc.up_axis = 'UP_Y'
     
-    
 def addCameraShp(pio, mid, pimp):
     bpy.ops.object.camera_add(enter_editmode=False, align='VIEW', location=(pio, mid, pimp), rotation=(0, 0, 0))
-    cameraNew = bpy.context.object 
+    cameraNew=bpy.context.object
     return cameraNew
-    
-    
+
 def cameraTravelingSimpleShp(size, mid, pimp):
     bpy.ops.curve.primitive_bezier_circle_add(radius=size, enter_editmode=False, align='WORLD', location=(0, 0, pimp))
     path = bpy.context.object 
@@ -70,6 +50,39 @@ def putMarkers(cameragr):
         marker.camera = cameragr[nyo]
         nyo=nyo+1
 
+
+#to create curve
+#this for reference
+#coords_list = [[0,1,2], [1,2,3], [-3,2,1], [0,0,-4]]
+#create_curve(coords_list)
+#cordo camera
+
+def create_curve(coords_list, cordocam):
+    #add curve
+    crv = bpy.data.curves.new('crv', 'CURVE')
+    crv.dimensions = '3D'
+    crv.resolution_u = 2
+    spline = crv.splines.new(type='NURBS')
+    spline.points.add(len(coords_list) - 1) 
+    for p, new_co in zip(spline.points, coords_list):
+        p.co = (new_co + [1.0])
+    spline.use_endpoint_u = True
+    spline.use_endpoint_v = True
+    newCurve = bpy.data.objects.new('CurveNya', crv)
+    bpy.data.collections['Collection'].objects.link(newCurve)
+    print(newCurve)
+    #add camera
+    bpy.ops.object.camera_add(enter_editmode=False, align='VIEW', location=(cordocam), rotation=(0, 0, 0))
+    cameraNew=bpy.context.object
+    print(cameraNew)
+    #Donc parent Curve and camera
+    bpy.ops.object.select_all(action='DESELECT')
+    newCurve.select_set(True)
+    cameraNew.select_set(True)
+    bpy.context.view_layer.objects.active = newCurve
+    bpy.ops.object.parent_set(type='FOLLOW') 
+    bpy.context.object.data.path_duration = 1100
+    return cameraNew
 
     
     

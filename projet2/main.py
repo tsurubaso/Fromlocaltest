@@ -76,6 +76,13 @@ cameraNew=defs.addCameraShp(-xl,yl,zl)
 defs.targetobj(emptygr[0],cameraNew)
 cameragr.append(bpy.context.object)
 
+
+coords_list = [[0,1,4], [1,2,3], [-3,2,1], [0,0,-4]]
+cordocam=(0,1,4)
+cameraNew3=defs.create_curve(coords_list,cordocam)  
+cameragr.append(cameraNew3)
+defs.targetobj(emptygr[0],cameraNew3)
+
 defs.putMarkers(cameragr)
 
 #On passe sur Cycle
