@@ -14,7 +14,19 @@ Copyright (c) 2020 Sylvain Bilhaud, Tokyo
    limitations under the License.
 
 
-This folder [Project3] contains a Blender file and 2 .py files to use with the Blend.
+
+
+[Project4] contains some Pythons files.
+
+A special thanks to Codeloop (https://codeloop.org)
+
+From Parwiz Forogh
+
+Youtube channel: https://www.youtube.com/channel/UCD6ArU-AYbfIj5sx2L4SZAQ
+
+
+
+
 
 The goal of the script:
 
