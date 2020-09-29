@@ -18,12 +18,12 @@ from PyQt5 import QtCore
 class Window(QDialog):
     def __init__(self):
         super().__init__()
-        self.title = "HBox Layout"
-        self.top = 200
-        self.left = 400
-        self.width = 400
-        self.height = 100
-        self.iconName = "icon.png"
+        self.title = "Find the Data you need"
+        self.top = 100
+        self.left = 200
+        self.width = 800
+        self.height =600
+        self.iconName = "C:\gitproject\projet3\images\OpenDataChallengeDatasets.jpg"
         self.InitWindow()
 
 
@@ -33,74 +33,86 @@ class Window(QDialog):
         self.setGeometry(self.left, self.top, self.width, self.height)
         
         self.CreateLayout()
-        vbox = QVBoxLayout()
         
-        label = QLabel("This Is PyQt5 Labels")
-        vbox.addWidget(label)
-        label2 = QLabel("This Is PyQt5 GUI Applicaition Development, Hello")
-        label2.setFont(QtGui.QFont("Sanserif", 20))
+        vbox = QVBoxLayout()
+        # Second Big intro Line 
+        label2 = QLabel("You will be asked to provide some informations:")
+        label2.setFont(QtGui.QFont("Sanserif", 25))
         label2.setStyleSheet('color:red')
         vbox.addWidget(label2)
-		
+        # First Link to search text
+        label = QLabel("1) Please insert the link to search")
+        label.setFont(QtGui.QFont("Sanserif", 15))
+        label.setStyleSheet('color:black')
+        vbox.addWidget(label)
+		# Insert html line
         self.lineedit = QLineEdit(self)
         self.lineedit.setFont(QtGui.QFont("Sanserif", 15))
         self.lineedit.returnPressed.connect(self.onPressed)
-        self.label3 = QLabel(self)
-        self.label3.setFont(QtGui.QFont("Sanserif", 15))
-        vbox.addWidget(self.label3)
         vbox.addWidget(self.lineedit)
-
-
-        textEdit = QTextEdit(self)
-        vbox.addWidget(textEdit)
-        
-        self.btn = QPushButton("Open Second Dialog")
-        self.btn.setFont(QtGui.QFont("Sanserif", 15))
-        self.btn.clicked.connect(self.openSecondDialog)
- 
-        vbox.addWidget(self.btn)
-
-
-
-
+        # Insert Text for Iteration
+        self.label3 = QLabel("2) The number of iteration")
+        self.label3.setFont(QtGui.QFont("Sanserif", 15))
+        self.label3.setStyleSheet('color:black')
+        vbox.addWidget(self.label3)
+        # Insert Iteration number line
+        self.lineedit2 = QLineEdit(self)
+        self.lineedit2.setFont(QtGui.QFont("Sanserif", 15))
+        self.lineedit2.returnPressed.connect(self.onPressed)
+        vbox.addWidget(self.lineedit2)
+        # Insert Text for the word to erase
+        self.label4 = QLabel("3) The word to erase")
+        self.label4.setFont(QtGui.QFont("Sanserif", 15))
+        self.label4.setStyleSheet('color:black')
+        vbox.addWidget(self.label4)
+        # Insert the word to erase line
+        self.lineedit3 = QLineEdit(self)
+        self.lineedit3.setFont(QtGui.QFont("Sanserif", 15))
+        self.lineedit3.returnPressed.connect(self.onPressed)
+        vbox.addWidget(self.lineedit3)
+        # Insert Text for the word to erase
+        self.label5 = QLabel("4) The name of Csv File")
+        self.label5.setFont(QtGui.QFont("Sanserif", 15))
+        self.label5.setStyleSheet('color:black')
+        vbox.addWidget(self.label5)
+        # Insert the word to erase line
+        self.lineedit4 = QLineEdit(self)
+        self.lineedit4.setFont(QtGui.QFont("Sanserif", 15))
+        self.lineedit4.returnPressed.connect(self.onPressed)
+        vbox.addWidget(self.lineedit4)
+        # Adding the bellow group box
         vbox.addWidget(self.groupBox)
         self.setLayout(vbox)
         self.show()
-        
+    
     def onPressed(self):
         self.label3.setText(self.lineedit.text())
-        
-        
-        
-    def openSecondDialog(self):
-        mydialog = QDialog(self)
-        #mydialog.setModal(True)
-        #mydialog.exec()
- 
-        mydialog.show()
-
 
     def CreateLayout(self):
-        self.groupBox = QGroupBox("What Is Your Favorite Programming Language")
+        self.groupBox = QGroupBox("Different actions")
         gridLayout = QGridLayout()
-        self.button = QPushButton("Python", self)
-        
-        self.button.setWhatsThis("This is a button that you can click on this button")
-        self.button.setIcon(QtGui.QIcon("pythonicon.png"))
+        #First button start
+        self.button = QPushButton("Start", self)
+        self.button.setWhatsThis("Start the program")
+        self.button.setIcon(QtGui.QIcon("C:/gitproject/projet3/images/start.png"))
         self.button.setIconSize(QtCore.QSize(40, 40))
         self.button.setMinimumHeight(40)
         gridLayout.addWidget(self.button, 0,0)
-        self.button2 = QPushButton("C++", self)
-        self.button2.setIcon(QtGui.QIcon("cpp.png"))
+        #Second button Show/Hide the Terminal
+        self.button2 = QPushButton("Show/Hide", self)
+        self.button2.setWhatsThis("Show/Hide the Terminal to see progression")
+        self.button2.setIcon(QtGui.QIcon("C:\gitproject\projet3\images\hide.png"))
         self.button2.setIconSize(QtCore.QSize(40, 40))
         self.button2.setMinimumHeight(40)
         gridLayout.addWidget(self.button2, 0,1)
-        self.button3 = QPushButton("Java", self)
+        #Third button No use yet
+        self.button3 = QPushButton("No use yet", self)
         self.button3.setIcon(QtGui.QIcon("java.png"))
         self.button3.setIconSize(QtCore.QSize(40, 40))
         self.button3.setMinimumHeight(40)
         gridLayout.addWidget(self.button3,1,0)
-        self.button4 = QPushButton("C#", self)
+        #Third button No use yet
+        self.button4 = QPushButton("No use Yet", self)
         self.button4.setIcon(QtGui.QIcon("csharp.png"))
         self.button4.setIconSize(QtCore.QSize(40, 40))
         self.button4.setMinimumHeight(40)
