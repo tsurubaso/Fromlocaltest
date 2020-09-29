@@ -1,6 +1,7 @@
 import bpy
 import random
-defs = bpy.data.texts["defs.py"].as_module()
+import defs as defs
+#defs = bpy.data.texts["defs.py"].as_module()
 
 #Toutes les variables
 #le calcul des points des lamps
