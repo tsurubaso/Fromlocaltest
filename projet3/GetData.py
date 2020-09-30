@@ -26,11 +26,7 @@ import urllib.request
 #region
 my_list = []
 substring = "detail"
-adress1=""
-nbrBoucle=0
-eraseName=""
-nameCsv=""
-adress2=""
+
 #endregion
 
 #Window Class
@@ -67,10 +63,9 @@ class Window(QDialog):
 		# Insert html line
         self.lineedit = QLineEdit(self)
         self.lineedit.setFont(QtGui.QFont("Sanserif", 15))
-        adress1=self.lineedit.text()
         vbox.addWidget(self.lineedit)
 
-         # Secong magical Link  text
+         # Second magical Link  text
         label6 = QLabel("1) Please insert the magical link, and Enter")
         label6.setFont(QtGui.QFont("Sanserif", 15))
         label6.setStyleSheet('color:black')
@@ -78,7 +73,6 @@ class Window(QDialog):
 		# Insert html line
         self.lineedit5 = QLineEdit(self)
         self.lineedit5.setFont(QtGui.QFont("Sanserif", 15))
-        adress2=self.lineedit5.text()
         vbox.addWidget(self.lineedit5)
 
         # Insert Text for Iteration
@@ -89,8 +83,8 @@ class Window(QDialog):
         # Insert Iteration number line
         self.lineedit2 = QLineEdit(self)
         self.lineedit2.setFont(QtGui.QFont("Sanserif", 15))
-        nbrBoucle=self.lineedit2.text()
         vbox.addWidget(self.lineedit2)
+
         # Insert Text for the word to erase
         self.label4 = QLabel("3) The word to erase, and Enter")
         self.label4.setFont(QtGui.QFont("Sanserif", 15))
@@ -99,9 +93,9 @@ class Window(QDialog):
         # Insert the word to erase line
         self.lineedit3 = QLineEdit(self)
         self.lineedit3.setFont(QtGui.QFont("Sanserif", 15))
-        eraseName=self.lineedit3.text()
         vbox.addWidget(self.lineedit3)
-        # Insert Text for the word to erase
+
+        # Insert Text for the CSV name
         self.label5 = QLabel("4) The name of Csv File, and Enter")
         self.label5.setFont(QtGui.QFont("Sanserif", 15))
         self.label5.setStyleSheet('color:black')
@@ -109,8 +103,17 @@ class Window(QDialog):
         # Insert the word to erase line
         self.lineedit4 = QLineEdit(self)
         self.lineedit4.setFont(QtGui.QFont("Sanserif", 15))
-        nameCsv=self.lineedit4.text()
         vbox.addWidget(self.lineedit4)
+
+        #All the values from qlineedit
+
+        self.adress2=self.lineedit5.text()
+        self.nbrBoucle=self.lineedit2.text()
+        self.eraseName=self.lineedit3.text()
+        self.nameCsv=self.lineedit4.text()
+        self.adress1=self.lineedit.text()
+
+
 
         # Adding the bellow group box
 
@@ -122,7 +125,7 @@ class Window(QDialog):
         self.button.setIcon(QtGui.QIcon("C:/gitproject/projet3/images/start.png"))
         self.button.setIconSize(QtCore.QSize(40, 40))
         self.button.setMinimumHeight(40)
-        self.button.clicked.connect( self.search1(adress1, adress2, nbrBoucle, eraseName, nameCsv))
+        self.button.clicked.connect( self.search1(self.adress1, self.adress2, self.nbrBoucle, self.eraseName, self.nameCsv))
         # 
         gridLayout.addWidget(self.button, 0,0)
         #Second button Show/Hide the Terminal
@@ -132,18 +135,7 @@ class Window(QDialog):
         self.button2.setIconSize(QtCore.QSize(40, 40))
         self.button2.setMinimumHeight(40)
         gridLayout.addWidget(self.button2, 0,1)
-        #Third button No use yet
-        self.button3 = QPushButton("No use yet", self)
-        self.button3.setIcon(QtGui.QIcon("java.png"))
-        self.button3.setIconSize(QtCore.QSize(40, 40))
-        self.button3.setMinimumHeight(40)
-        gridLayout.addWidget(self.button3,1,0)
-        # button No use yet
-        self.button4 = QPushButton("No use Yet", self)
-        self.button4.setIcon(QtGui.QIcon("csharp.png"))
-        self.button4.setIconSize(QtCore.QSize(40, 40))
-        self.button4.setMinimumHeight(40)
-        gridLayout.addWidget(self.button4, 1, 1)
+        
 
         self.groupBox.setLayout(gridLayout)
         vbox.addWidget(self.groupBox)
