@@ -28,7 +28,7 @@ https://stackoverflow.com/questions/47560399/run-function-in-the-background-and-
 
 #Import
 #region
-from PyQt5.QtWidgets import QApplication, QDialog, QPushButton, QGridLayout, QGroupBox, QVBoxLayout, QLabel, QLineEdit
+from PyQt5.QtWidgets import QApplication, QDialog, QPushButton, QGridLayout, QGroupBox, QVBoxLayout, QLabel, QTextEdit
 import sys
 from PyQt5 import QtGui
 from PyQt5.QtCore import QRect
@@ -79,8 +79,9 @@ class Window(QDialog):
         label.setStyleSheet('color:black')
         vbox.addWidget(label)
 		# Insert html line
-        self.lineedit = QLineEdit(self)
+        self.lineedit = QTextEdit(self)
         self.lineedit.setFont(QtGui.QFont("Sanserif", 15))
+        self.lineedit.textChanged.connect(self.save_text)
         vbox.addWidget(self.lineedit)
 
          # Second magical Link  text
@@ -89,8 +90,9 @@ class Window(QDialog):
         label6.setStyleSheet('color:black')
         vbox.addWidget(label6)
 		# Insert html line
-        self.lineedit5 = QLineEdit(self)
+        self.lineedit5 = QTextEdit(self)
         self.lineedit5.setFont(QtGui.QFont("Sanserif", 15))
+        self.lineedit5.textChanged.connect(self.save_text)
         vbox.addWidget(self.lineedit5)
 
         # Insert Text for Iteration
@@ -99,8 +101,9 @@ class Window(QDialog):
         self.label3.setStyleSheet('color:black')
         vbox.addWidget(self.label3)
         # Insert Iteration number line
-        self.lineedit2 = QLineEdit(self)
+        self.lineedit2 = QTextEdit(self)
         self.lineedit2.setFont(QtGui.QFont("Sanserif", 15))
+        self.lineedit2.textChanged.connect(self.save_text)
         vbox.addWidget(self.lineedit2)
 
         # Insert Text for the word to erase
@@ -109,27 +112,25 @@ class Window(QDialog):
         self.label4.setStyleSheet('color:black')
         vbox.addWidget(self.label4)
         # Insert the word to erase line
-        self.lineedit3 = QLineEdit(self)
+        self.lineedit3 = QTextEdit(self)
         self.lineedit3.setFont(QtGui.QFont("Sanserif", 15))
+        self.lineedit3.textChanged.connect(self.save_text)
         vbox.addWidget(self.lineedit3)
-
+        
         # Insert Text for the CSV name
         self.label5 = QLabel("4) The name of Csv File, and Enter")
         self.label5.setFont(QtGui.QFont("Sanserif", 15))
         self.label5.setStyleSheet('color:black')
         vbox.addWidget(self.label5)
         # Insert the word to erase line
-        self.lineedit4 = QLineEdit(self)
+        self.lineedit4 = QTextEdit(self)
         self.lineedit4.setFont(QtGui.QFont("Sanserif", 15))
+        self.lineedit4.textChanged.connect(self.save_text)
         vbox.addWidget(self.lineedit4)
 
-        #All the values from qlineedit
+    
 
-        self.adress2=self.lineedit5.text()
-        self.nbrBoucle=self.lineedit2.text()
-        self.eraseName=self.lineedit3.text()
-        self.nameCsv=self.lineedit4.text()
-        self.adress1=self.lineedit.text()
+        
 
 
 
@@ -143,8 +144,8 @@ class Window(QDialog):
         self.button.setIcon(QtGui.QIcon("C:/gitproject/projet3/images/start.png"))
         self.button.setIconSize(QtCore.QSize(40, 40))
         self.button.setMinimumHeight(40)
-        self.button.clicked.connect( self.search1(self.adress1, self.adress2, self.nbrBoucle, self.eraseName, self.nameCsv))
-        # 
+        self.button.clicked.connect( self.search1(self, self.text,self.text5, self.text2, self.text3, self.text4 ))
+        #  #self.adress1, self.adress2, self.nbrBoucle, self.eraseName, self.nameCsv
         gridLayout.addWidget(self.button, 0,0)
         #Second button Show/Hide the Terminal
         self.button2 = QPushButton("Show/Hide", self)
@@ -160,7 +161,24 @@ class Window(QDialog):
         self.setLayout(vbox)
         self.show()
         
-    
+    def save_text(self):
+        if self.lineedit:
+            text = self.lineedit.toPlainText()
+            print (text)
+        if self.lineedit5:
+            text5 = self.lineedit5.toPlainText()
+            print (text5)
+        if self.lineedit:
+            text2 = self.lineedit2.toPlainText()
+            print (text2)
+        if self.lineedit3:
+            text3 = self.lineedit3.toPlainText()
+            print (text3)
+        if self.lineedit4:
+            text4 = self.lineedit4.toPlainText()
+            print (text4)
+        return self.text, self.text2, self.text3, self.text4, self.text5
+        
     
     
     
