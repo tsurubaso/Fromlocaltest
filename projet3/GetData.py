@@ -1,11 +1,29 @@
 
 # Notes
 #region
-#4 boutons plusieurs labels and add info on python#4 boutons plusieurs labels and add info on python
-# The base is working well
-#more and more sexy
-# Have to work on this one later https://codeloop.org/pyqt5-qmessagebox-practical-example/
-# this one also https://codeloop.org/python-mysql-database-for-beginners/
+"""
+
+        self.textedit = QTextEdit()
+        self.textedit.textChanged.connect(self.save_text)
+        layout.addWidget(self.textedit)
+
+    def save_text(self):
+        text = self.textedit.toPlainText()
+        with open('mytextfile.txt', 'w') as f:
+            f.write(text)
+
+
+            def save_text():
+        text=textedit.toPlainText()
+    with open('mytextfile.txt', 'w') as f:
+        f.write(text)
+
+button.clicked.connect(save_text)
+
+https://stackoverflow.com/questions/47560399/run-function-in-the-background-and-update-ui
+
+
+"""
 #endregion
 
 #Import
