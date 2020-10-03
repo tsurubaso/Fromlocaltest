@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="847c2e32-38ad-4aed-8fc0-3e4ebe6319d7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../projet2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../projet2/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DicoNico.java" beforeDir="false" afterPath="$PROJECT_DIR$/DicoNico.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +22,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -36,9 +40,21 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="360" y="73" key="new project wizard" timestamp="1601342367082">
+    <state x="249" y="0" key="#Project_Structure" timestamp="1601604557643">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="360" y="73" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1601342367082" />
+    <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1601604557643" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1601604491879">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601604491879" />
+    <state x="360" y="66" key="new project wizard" timestamp="1601604540163">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="360" y="66" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1601604540163" />
+    <state x="518" y="16" key="search.everywhere.popup" timestamp="1601604439808">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="518" y="16" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601604439808" />
   </component>
 </project>
