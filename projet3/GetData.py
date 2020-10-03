@@ -2,26 +2,7 @@
 # Notes
 #region
 """
-
-        self.textedit = QTextEdit()
-        self.textedit.textChanged.connect(self.save_text)
-        layout.addWidget(self.textedit)
-
-    def save_text(self):
-        text = self.textedit.toPlainText()
-        with open('mytextfile.txt', 'w') as f:
-            f.write(text)
-
-
-            def save_text():
-        text=textedit.toPlainText()
-    with open('mytextfile.txt', 'w') as f:
-        f.write(text)
-
-button.clicked.connect(save_text)
-
-https://stackoverflow.com/questions/47560399/run-function-in-the-background-and-update-ui
-
+btn.clicked.connect(self.close)
 
 """
 #endregion
@@ -153,6 +134,21 @@ class Window(QDialog):
         self.button2.setIconSize(QtCore.QSize(40, 40))
         self.button2.setMinimumHeight(40)
         gridLayout.addWidget(self.button2, 0,1)
+        #third button Show/Hide the Terminal
+        self.button3 = QPushButton("Close", self)
+        self.button3.setWhatsThis("This will close the App")
+        self.button3.setIcon(QtGui.QIcon("C:\gitproject\projet3\images\close.png"))
+        self.button3.setIconSize(QtCore.QSize(30, 30))
+        self.button3.setMinimumHeight(40)
+        self.button3.clicked.connect(self.close)
+        gridLayout.addWidget(self.button3, 1,0)
+        #Forth button NO use yet
+        self.button4 = QPushButton("NO use yet", self)
+        self.button4.setWhatsThis("NO use yet")
+        self.button4.setIcon(QtGui.QIcon("C:\gitproject\projet3\images\question.png"))
+        self.button4.setIconSize(QtCore.QSize(30, 30))
+        self.button4.setMinimumHeight(40)
+        gridLayout.addWidget(self.button4, 1,1)
         
 
         self.groupBox.setLayout(gridLayout)
