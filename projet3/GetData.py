@@ -144,8 +144,7 @@ class Window(QDialog):
         self.button.setIcon(QtGui.QIcon("C:/gitproject/projet3/images/start.png"))
         self.button.setIconSize(QtCore.QSize(40, 40))
         self.button.setMinimumHeight(40)
-        self.button.clicked.connect( self.search1(self, self.text,self.text5, self.text2, self.text3, self.text4 ))
-        #  #self.adress1, self.adress2, self.nbrBoucle, self.eraseName, self.nameCsv
+        self.button.clicked.connect(self.search1)
         gridLayout.addWidget(self.button, 0,0)
         #Second button Show/Hide the Terminal
         self.button2 = QPushButton("Show/Hide", self)
@@ -163,29 +162,29 @@ class Window(QDialog):
         
     def save_text(self):
         if self.lineedit:
-            text = self.lineedit.toPlainText()
-            print (text)
+            self.text = self.lineedit.toPlainText()
+            #print (text)
         if self.lineedit5:
-            text5 = self.lineedit5.toPlainText()
-            print (text5)
+            self.text5 = self.lineedit5.toPlainText()
+            #print (text5)
         if self.lineedit:
-            text2 = self.lineedit2.toPlainText()
-            print (text2)
+            self.text2 = self.lineedit2.toPlainText()
+            #print (text2)
         if self.lineedit3:
-            text3 = self.lineedit3.toPlainText()
-            print (text3)
+            self.text3 = self.lineedit3.toPlainText()
+            #print (text3)
         if self.lineedit4:
-            text4 = self.lineedit4.toPlainText()
-            print (text4)
+            self.text4 = self.lineedit4.toPlainText()
+            #print (text4)
         return self.text, self.text2, self.text3, self.text4, self.text5
         
     
     
     
-    def search1(self,adress1, adress2, nbrBoucle, eraseName, nameCsv):
-        nbrBoucle=int(nbrBoucle)
-        for i in range (1,nbrBoucle,1):
-            gribou=adress1+str(i)
+    def search1(self):
+        
+        for i in range (1,int(self.text2),1):
+            gribou=self.text+str(i)
             result2 = requests.get (gribou)
             a=result2.status_code
             print (a)
@@ -195,7 +194,7 @@ class Window(QDialog):
                 if fullstring is None:
                     continue
                 if substring in fullstring:
-                    my_list.append(adress2+fullstring)
+                    my_list.append(self.text5+fullstring)
 
         df = pd.DataFrame(my_list, columns = ['col1'])
         df.sort_values(by=['col1'])
@@ -219,7 +218,7 @@ class Window(QDialog):
                 bloublou2='None'
             else:
                 bloublou2=bloublou2.text
-                bloublou2=bloublou2.replace(eraseName, '')
+                bloublou2=bloublou2.replace(self.text3, '')
             
             if bloublou4[0] is None:
                 bloublou4[0]='None'
@@ -247,7 +246,7 @@ class Window(QDialog):
             
         df2.sort_values(by=['Name'])
         df2.drop_duplicates(keep='first', inplace=True)
-        df2.to_csv(nameCsv+".csv", index=False, encoding="utf_8_sig")
+        df2.to_csv(self.text4+".csv", index=False, encoding="utf_8_sig")
 
 
     

@@ -24,11 +24,19 @@ From Parwiz Forogh
 
 Youtube channel: https://www.youtube.com/channel/UCD6ArU-AYbfIj5sx2L4SZAQ
 
+Also 
+
+Thanks to @jsulm and @JonB, 
+
+from https://forum.qt.io
+
+for their decisive advices.
 
 
+The goals of the script:
 
+- Create a Data collecting tool, with a graphic interface. check
+- Show progress of the search, and when script is finished a button to close the window
 
-The goal of the script:
-
-- Create a Data collecting tool, with a graphic interface.
+-
 
