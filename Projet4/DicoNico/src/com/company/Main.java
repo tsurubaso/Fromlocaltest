@@ -7,64 +7,70 @@ package com.company;
 //https://www.programmableweb.com/category/dictionary/api
 
 //http://kong.github.io/unirest-java/
+/*
 
+
+
+ */
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 import kong.unirest.HttpResponse;
 import kong.unirest.JsonNode;
 
 import kong.unirest.Unirest;
-import kong.unirest.json.JSONArray;
 import kong.unirest.json.JSONObject;
-import tech.tablesaw.api.DateColumn;
-import tech.tablesaw.api.StringColumn;
-import tech.tablesaw.api.Table;
-import tech.tablesaw.columns.Column;
 
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 public class Main {
 
     //Values
 
-    String motacherch = "porte";
+    String motacherch = "briser";
 
 
 
-    public void  gettest(){
+    public void  gettest() throws IOException {
 
 
 
-       HttpResponse<JsonNode> response = Unirest.get("https://dictapi.lexicala.com/search?source=global&language=fr&text="+motacherch+"&analyzed=true")
-               .basicAuth("user", "password")
-               .asJson();
-       Object Resultat = response.getBody().getObject().get("n_results");
-       System.out.println( Resultat);
-       JSONObject responsejson = response.getBody().getObject();
-       //JSONArray results = responsejson//.getJSONArray("n_results");
-       // System.out.println( results);
+        HttpResponse<JsonNode> response = Unirest.get("https://dictapi.lexicala.com/search?source=global&language=fr&text="+motacherch)
+                .basicAuth("user", "password")
+                .asJson();
         System.out.println( "---------------------------------------------" );
-/*
-    HttpResponse<JsonNode> response2 = Unirest.get("https://dictapi.lexicala.com/users/me")
-            .basicAuth("tsurubaso", "25decembre73")
-            .asJson();
-        System.out.println( response2.getBody());
-        JSONObject responsejson = response2.getBody().getObject();
-        JSONObject results = responsejson.getJSONObject("usage").getJSONObject("today");
-        Object results2=results.get("count");
-        System.out.println( results2);
 
-*/
-}
+        JSONObject responsejson = (JSONObject) response.getBody().getObject();
+        System.out.println( responsejson);
+
+        System.out.println( "---------------------------------------------" );
+
+        Map<String, Object> map;
+        map = (HashMap<String, Object>) new ObjectMapper().readValue(responsejson.toString(), LinkedHashMap.class);
+        System.out.println(map.get("results"));
+
+        System.out.println( "---------------------------------------------" );
+
+        List<Map<String, Object>> results = (List<Map<String, Object>>)map.get("results");
+
+        System.out.println( "---------------------------------------------" );
+        //System.out.println( results );
+        List<Map<String, Object>> results33 = (List<Map<String, Object>>)results.get(0).get("senses");
+        System.out.println( results33.get(0).get("definition") );
+        System.out.println( results33.get(1).get("definition") );
 
 
 
-    public static void main(String[] args) {
+
+    }
+
+
+
+    public static void main(String[] args) throws IOException {
         Main client = new Main();
 
         client.gettest();
