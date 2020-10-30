@@ -40,7 +40,7 @@ public class Main {
 
 
         HttpResponse<JsonNode> response = Unirest.get("https://dictapi.lexicala.com/search?source=global&language=fr&text="+motacherch)
-                .basicAuth("user", "password")
+                .basicAuth("tsurubaso", "25decembre73")
                 .asJson();
         System.out.println( "---------------------------------------------" );
 
